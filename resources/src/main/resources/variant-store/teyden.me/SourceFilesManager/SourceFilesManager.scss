@@ -1,0 +1,183 @@
+#source-files-manager {
+    margin: 0 auto;
+    max-width: 900px;
+    font-size: 120%;
+
+    transition: opacity 200ms;
+    &.is-loading {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    ul {
+        margin: 0;
+        list-style-type: none;
+
+        li {
+            line-height: 2em;
+        }
+    }
+
+    .pt-tree-root {
+        margin-left: 0;
+    }
+
+    #filter-input {
+        margin-left: 1em;
+        margin-bottom: 1em;
+    }
+
+    ul.source-file-groups {
+        > li {
+            margin-bottom: 0.5em;
+
+            > .name {
+                font-size: 130%;
+                line-height: 30px;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                .pt-icon-large {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    ul.source-file-items {
+        li {
+            margin-left: 30px;
+            overflow: auto;
+            padding: 0.2em 0.5em;
+            border: 1px solid #dbdcdd;
+            border-radius: 3px;
+            background-color: white;
+
+            .name {
+                cursor: pointer;
+                transition: font 200ms cubic-bezier(0.4, 1, 0.75, 0.9);
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                .pt-icon-standard {
+                    margin-right: 5px;
+                }
+            }
+
+            .pt-button-group, .meta {
+                float: right;
+            }
+            .meta {
+                color: #999;
+                line-height: 2em;
+
+                > span.date-added {
+                    display: inline-block;
+                    text-align: center;
+                }
+                > span.pt-popover-target {
+                    line-height: 1.8em;
+                }
+                > span.pt-tag {
+                    vertical-align: 10%;
+                }
+            }
+            .size {
+                width: 100px;
+            }
+            .date-added {
+                width: 100px;
+            }
+
+            .item-details {
+                table {
+                    margin: 0;
+                    width: 100%;
+                    font-size: 90%;
+
+                    th, td {
+                        text-align: center;
+                    }
+
+                    th {
+                        background-color: #555;
+                        color: white;
+                    }
+                }
+
+                h4 {
+                    color: #666;
+                    font-size: 100%;
+                    font-weight: bold;
+                    border: 0;
+                    margin: 0;
+                    padding-top: 0.8em;
+                }
+                .spacer {
+                    height: 0.5em;
+                }
+            }
+        }
+
+        li.expanded {
+            .name {
+                font-size: 120%;
+            }
+        }
+
+        &.single-patient li {
+            margin-left: 0;
+        }
+    }
+
+    #source-files-pagination {
+        text-align: center;
+
+        ul.pagination {
+            display: inline-block;
+            padding-right: 15px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            li {
+                display: inline-block;
+                padding: 0;
+
+                a {
+                    display: inline-block;
+                    cursor: inherit;
+                    top: 0; left: 0;
+                    padding: 0 10px;
+                    line-height: 2em;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .pt-non-ideal-state {
+        h4 {
+            margin-top: 0;
+            border: 0;
+            color: black;
+            font-weight: 600;
+            line-height: 0.9em;
+            font-size: 20px;
+        }
+    }
+}
+
+.source-file-tooltip .pt-popover-content {
+    max-width: 250px;
+}

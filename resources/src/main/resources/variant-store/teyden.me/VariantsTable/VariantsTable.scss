@@ -1,0 +1,516 @@
+.popover-cell {
+  .pt-popover-target {
+    position: absolute;
+    top: 2px; right: 2px;
+
+    button {
+      min-height: 19px;
+      line-height: 19px;
+    }
+  }
+}
+
+.quick-filters, .matched-genes-filter {
+  h5, h6 {
+    border: 0;
+    color: #666;
+  }
+
+  h6 {
+    color: #182026;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.quick-filters {
+  button {
+    margin: 3px;
+  }
+}
+
+#variant-store-patient {
+  .quick-filters {
+    width: 480px;
+    float: left;
+  }
+}
+
+.variants-table-manager {
+  margin-bottom: 1px;
+  overflow: hidden;
+
+  &.pt-callout {
+    clear: both;
+  }
+
+  .filter-manager, .column-manager {
+    margin-right: 3px;
+  }
+
+  .pt-popover-target {
+    float: right;
+  }
+}
+
+.variants-table-manager {
+  > span {
+    line-height: 30px;
+  }
+
+  .pt-popover-target {
+    > button {
+      margin: 3px;
+    }
+  }
+}
+
+.column-manager-popover, .filter-manager-popover {
+  z-index: 1;
+
+  &.pt-popover.pt-popover-content-sizing .pt-popover-content {
+    padding: 0;
+  }
+
+  .popover-content-header {
+    overflow: auto;
+    padding: 10px;
+
+    .jump-to-column {
+      width: 60%;
+      visibility: hidden;
+    }
+
+    .reset {
+      float: right;
+    }
+  }
+
+  .popover-content-body {
+    .column-list, .filter-list {
+      list-style: none;
+      padding: 0;
+
+      .column-list-item, .filter-list-item {
+        display: block;
+      }
+    }
+
+    .column-list {
+      border-top: 1px solid #bbb;
+      max-height: 450px;
+      overflow-y: scroll;
+    }
+
+    .filter-list {
+      .empty {
+        width: 480px;
+        padding: 0 40px 15px 40px;
+
+        h4 {
+          color: #182026;
+          font-weight: 600;
+          margin: 0 0 10px;
+          padding: 0;
+          line-height: 0.9em;
+          font-size: 20px;
+          border-bottom: none;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .filter-list-item {
+      margin: 5px 0;
+      padding: 0 10px;
+      line-height: 30px;
+
+      .pt-checkbox.pt-control {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+      }
+
+      > span {
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 2px;
+
+        &.column-name {
+          width: 160px;
+          font-weight: bold;
+          margin-right: 3px;
+        }
+
+        &.operator {
+          width: 75px;
+          text-align: center;
+          font-weight: bold;
+        }
+
+        &.filter {
+          position: relative;
+          margin: 0 10px;
+
+          width: 160px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .remove {
+        min-height: 20px;
+        min-width: 20px;
+        line-height: 20px;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+
+.column-list-item {
+  border: 0 solid #ddd;
+  border-width: 1px 0;
+  padding: 5px 10px;
+  width: 490px;
+  line-height: 29px;
+
+  &.dragging {
+    background: #FFF;
+    z-index: 1005;
+  }
+
+  .column-modifier {
+    margin: 0 3px;
+    vertical-align: top;
+
+    span {
+      overflow: hidden;
+    }
+  }
+
+  .drag-handle {
+    cursor: move;
+    padding-top: 5px;
+  }
+
+  .text {
+    display: inline-block;
+    max-width: 200px;
+    padding: 0 5px;
+    vertical-align: middle;
+  }
+
+  .sort {
+    float: right;
+    padding-top: 4px;
+
+    .sort-order.pt-tag {
+      min-width: 0;
+      margin: 3px 5px; margin-top: 0;
+      vertical-align: top;
+    }
+
+    .pt-radio {
+      display: inline;
+      vertical-align: top;
+    }
+
+    .pt-control-indicator {
+      margin-right: 5px;
+    }
+  }
+}
+
+.matched-genes-filter {
+  margin-left: 510px;
+
+  &.pt-callout {
+    padding-bottom: 3px;
+  }
+
+  h5 .xTooltip {
+    font-size: 13px;
+  }
+
+  .match-threshold-slider {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    .title {
+      font-weight: bold;
+      font-size: 80%;
+      text-transform: uppercase;
+      display: block;
+      line-height: 12px;
+    }
+
+    .slider-and-tag {
+      float: left;
+    }
+
+    input {
+      vertical-align: bottom;
+      width: 110px;
+      margin: 0; margin-right: 5px;
+      line-height: 20px;
+      padding: 0;
+      vertical-align: middle;
+    }
+
+    .pt-tag {
+      min-width: 0;
+      font-weight: bold;
+      font-size: 90%;
+    }
+
+    button {
+      font-size: 80%;
+      font-weight: bold;
+      padding: 0 5px;
+      line-height: 20px;
+      min-height: 0;
+      margin: 0 2px;
+      float: right;
+      line-height: 20px;
+    }
+  }
+
+  .included-phenotypes-list {
+    float: left;
+    width: calc(50% - 25px);
+
+    .list {
+      margin: .5em 0; margin-top: 0;
+      padding: .5em;
+      border: 1px dotted #e8e8e8;
+      background-color: #ffc;
+      height: 86px;
+      overflow-y: auto;
+      min-width: 15em;
+
+      .phenotype {
+        color: #666;
+        display: block;
+        cursor: pointer;
+        float: left; 
+        width: 15em;
+        /* Hanging indent: */
+        padding-left: 1em;
+        text-indent: -1em;
+
+        &.negated {
+          color: #C00;
+        }
+
+        &.disabled {
+          text-decoration: line-through;
+        }
+
+        &:hover, &.disabled {
+          opacity: .7;
+        }
+      }
+    }
+  }
+  .gene-matches-list {
+    float: left;
+    width: calc(50% - 25px);
+
+    .list {
+      margin: .5em 0; margin-top: 0;
+      border: 1px solid #ccc;
+      background-color: white;
+      height: 100px;
+      overflow: hidden;
+      min-width: 13em;
+      position: relative;
+
+      .gene {
+        display: block;
+        width: 13em;
+        padding-right: 5px; padding-bottom: 3px;
+        height: 20px; /* em values here don't work well with react-virtualized */
+
+        span.name {
+          display: inline-block;
+          margin-left: 0.3em;
+          vertical-align: middle;
+        }
+
+        .pt-tag {
+          min-width: 0;
+          float: right;
+          margin-right: 0.3em;
+        }
+
+        button {
+          min-height: 20px; line-height: 20px;
+          width: 30px;
+        }
+
+        button.filter::before {
+          opacity: 0.4;
+        }
+
+        button.filter.enabled::before {
+          opacity: 1;
+        }
+
+        .pt-popover-target {
+          float: right;
+        }
+      }
+
+      .pt-spinner {
+        position: absolute;
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+      }
+
+      button.load {
+        display: block;
+        margin: 0 auto;
+        margin-top: 33px;
+      }
+    }
+  }
+  .arrow-icon {
+    margin-top: 70px;
+    float: left;
+    width: 50px;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .selection-controls {
+    margin: 0.1em;
+
+    .title {
+      font-weight: bold;
+      line-height: 22px;
+      font-size: 80%;
+      text-transform: uppercase;
+    }
+    button {
+      font-size: 80%;
+      font-weight: bold;
+      padding: 0 5px;
+      line-height: 20px;
+      min-height: 0;
+      margin: 0 2px;
+    }
+    .summary {
+      float: right;
+      font-size: 90%;
+      font-style: italic;
+      line-height: 22px;
+    }
+  }
+}
+
+.gene-match-popover {
+  .hgnc-link {
+    font-size: 85%;
+  }
+
+  .header {
+    margin: 0.3em 0;
+
+    .gene-symbol {
+      background-color: #137cbd;
+      color: white;
+      padding: 3px 10px;
+      margin-right: 4px;
+      border-radius: 3px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .gene-desc {
+      font-weight: bold;
+    }
+
+  }
+
+  > div {
+    margin: 0.5em 0;
+  
+    .title {
+      font-weight: bold;
+      display: block;
+      margin-right: 0.2em;
+    }
+
+    .value.empty {
+      opacity: 0.8;
+      font-size: 90%;
+      margin-left: 5px;
+    }
+  }
+
+  .xref-buttons a {
+    font-size: 75%;
+    margin: 0.4em; margin-left: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .pt-tag {
+    margin: 3px 5px;
+  }
+}
+
+.viewbody, .editbody {
+  .pt-popover.pt-popover-content-sizing .pt-popover-content {
+    max-width: 550px; /* Override default 350px */
+    max-height: 550px;
+    overflow: auto;
+  }
+
+  .variants-table-detail .pt-tag {
+    margin: 3px 5px;
+  }
+
+  .pt-transition-container {
+    z-index: 1002; /* Appear in front of PT's "Create" and "Browse" buttons in the toolbar */
+  }
+}
+
+.viewbody .variant-table-object-popover, .editbody .variant-table-object-popover {
+  th, td {
+    padding: 5px;
+    font-size: 90%;
+    vertical-align: top;
+    border: 1px solid #ccc;
+  }
+  th {
+    text-align: center;
+
+    &.right {
+      text-align: right;
+    }
+  }
+  td {
+    text-align: left;
+  }
+}
+
+.ag-header-cell-label {
+  text-overflow: clip;
+  overflow: visible;
+  white-space: normal;
+}
+
+.ag-filter input[type=text] {
+  width: auto;
+}
+
+.ag-fresh {
+  clear: both;
+}

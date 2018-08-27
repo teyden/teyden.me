@@ -1,0 +1,16 @@
+@import 'blueprint-base.scss';
+@import '~ag-grid/dist/styles/ag-grid.css';
+@import '~ag-grid/dist/styles/theme-fresh.css';
+
+#variant-store-all-variants {
+  min-height: 705px;
+
+  .pt-tab {
+    font-size: 16px;
+  }
+
+  .ag-fresh {
+    height: calc(100vh - 480px);
+    min-height: 400px;
+  }
+}

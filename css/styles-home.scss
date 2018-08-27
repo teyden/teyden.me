@@ -1,0 +1,28 @@
+@import "variables";
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,300i,400,900');
+body {
+    background-color: #0073d5;
+    color: #ffffff;
+}
+nav.custom .navbar-brand {
+    font-family: 'Inconsolata', monospace;
+    font-size: 42px;
+    color: #ffffff;
+}
+nav.custom .navbar-brand:hover {    
+    color: #ffffff;
+}
+.navbar {
+    background-color: #0073d5;
+    color: #ffffff;
+}
+#sections {
+    left: 25px;
+    position: absolute;
+}
+.list-inline {
+
+}
+ul.logos {
+    font-size: 17px;
+}

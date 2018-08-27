@@ -1,0 +1,17 @@
+@import 'blueprint-base.scss';
+@import "~@blueprintjs/core/src/components/navbar/_navbar.scss";
+@import "~@blueprintjs/core/src/components/button/_button-group.scss";
+@import "~@blueprintjs/core/src/components/button/_button.scss";
+@import "~@blueprintjs/core/src/components/tabs/_tabs.scss";
+
+#variant-store-patient {
+  min-height: 705px;
+}
+
+.space-data #mainContentArea #variant-store-patient {
+  text-shadow: none;
+}
+
+.ag-fresh {
+  height: 400px;
+}
