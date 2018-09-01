@@ -1,0 +1,389 @@
+/* Generic cohort CSS rules (can be refactored out) */
+.cohort-action-menu {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  padding: 5px 0;
+}
+.cohort-name {
+  font-size: 16px;
+}
+.cohort-id {
+  font-size: 12px;
+}
+.cohort-description {
+  font-size: 12px;
+  margin: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 260px;
+  // TODO: wrap into multiple lines
+}
+.cohort-structural-metadata {
+  position: absolute;
+  right: 12px;
+  top: 45px;
+  padding: 5px 0;
+
+  > span {
+    border: 1px solid #D8D9DA;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-left: 3px;
+    font-size: 14px;
+  }
+}
+.cohort-statuses {
+  position: absolute;
+  right: 12px;
+  top: 81px;
+  padding: 5px 0;
+
+  .cohort-job-status {
+    margin-right: 4px;
+    padding: 6px;
+    text-align: right;
+
+    &.queued {
+      background-color: #D8D9DA;
+    }
+
+    .pt-icon-standard {
+      padding-right: 6px;
+    }
+  }
+  .cohort-document-status {
+    .cohort-document-status-option {
+      padding: 6px 6px 5px 6px;
+      color: #D8D9DA;
+      border: 1px solid #D8D9DA;
+
+      &.draft {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-width: 1px 0 1px 1px;
+      }
+      &.clean {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-width: 1px 1px 1px 0;
+      }
+      &.is-current-status {
+        &.draft {
+          color: #E09797;
+        }
+        &.outdated {
+          color: #F0B056;
+        }
+        &.clean {
+          color: #2B8039;
+        }
+      }
+    }
+  }
+}
+
+div[id*='filter-input'] {
+  width: 360px;
+  margin: 20px 0 15px 0;
+  display: inline-block;
+
+  .pt-input {
+    font-size: 14px;
+  }
+}
+
+/* Specific cohort manager CSS rules */
+#cohorts-manager {
+  max-width: 100%;
+  font-size: 120%;
+
+  transition: opacity 200ms;
+  &.is-loading {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      line-height: 2em;
+    }
+  }
+
+  .pt-tree-root {
+    margin-left: 0;
+  }
+
+  #cohort-callsets-table {
+    #cohort-callsets-table-filter-input {
+      width: 450px;
+
+      .pt-input {
+        font-size: 12px;
+      }
+    }
+
+    #cohort-callsets-table-items {
+      .patient-id {
+        position: absolute;
+        left: 265px;
+      }
+      .platform {
+        position: absolute;
+        left: 505px;
+      }
+      .upload-date {
+        position: absolute;
+        left: 635px;
+      }
+    }
+
+    #cohort-callsets-table-pagination {
+      float: right;
+    }
+  }
+
+  #cohorts-manager-list-container {
+    float: left;
+    width: 43%;
+    padding-left: 20px;
+
+    @media (max-width: 900px) {
+      // TODO it would be nice for the page to take full width, and the list become hidden but have the option to expand
+      float: none;
+    }
+
+    #cohorts-manager-list-filter-container {
+
+      #cohort-quick-filters {
+        margin-left: 2%;
+        margin-bottom: 1em;
+        display: inline-block;
+        line-height: 1.5;
+        font-size: 12px;
+        position: relative;
+        border-radius: 3px;
+        background-color: #eef0f2;
+        padding: 8px;
+
+        @media (max-width: 1620px) {
+          margin-left: 0;
+        }
+
+        > button {
+          margin: 0 3px;
+          padding: 0px 8px;
+        }
+
+        .divider {
+          border-right: 1px solid #dbdcdd;
+          padding-left: 3px;
+          margin-right: 3px;
+        }
+      }
+    }
+
+    #cohorts-list {
+      width: 100%;
+      //min-width: 400px;
+      display: inline-block;
+
+      ul {
+        margin: 0;
+      }
+
+      li.cohorts-list-item {
+        position: relative;
+        border: 1px solid #DBDCDD;
+        border-radius: 3px;
+        padding: 5px 12px;
+        margin: 5px 0;
+        height: 140px;
+      }
+    }
+
+    #cohorts-pagination {
+      float: right;
+
+      // TODO refactor pagination CSS to a generic rule (SourceFilesManager also uses)
+      ul.pagination {
+        display: inline-block;
+        padding-right: 15px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        li {
+          display: inline-block;
+          padding: 0;
+
+          a {
+            display: inline-block;
+            cursor: inherit;
+            top: 0; left: 0;
+            padding: 0 10px;
+            line-height: 2em;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  #cohort-detailed-page {
+    position: relative;
+    float: right;
+    border: 1px solid #DBDCDD;
+    width: 55%;
+    margin: 0 1%;
+    border-radius: 3px;
+    padding: 12px 17px;
+    min-height: 700px;
+
+    .cohort-id {
+      font-size: 18px;
+      padding: 9px 0;
+    }
+    .cohort-statuses {
+      right: 158px;
+      top: 7px;
+      padding: 8px 0;
+    }
+    .cohort-structural-metadata {
+      position: unset;
+      padding: 20px 0;
+    }
+    .cohort-administrative-metadata {
+      position: absolute;
+      right: 0;
+      top: 67px;
+
+      > span {
+        display: block;
+        text-align: right;
+        font-size: 12px;
+        padding: 3px 14px;
+      }
+    }
+    .cohort-action-menu {
+      top: 7px;
+      padding: 7px 0;
+
+      #primary-action {
+        margin: 0 4px;
+        position: absolute;
+        right: 31px;
+      }
+    }
+    .basic-information {
+      height: 191px;
+
+      > div {
+        padding: 8px 0;
+
+        .label {
+          font-size: 14px;
+          font-weight: 600;
+          padding-bottom: 4px;
+        }
+        .inline-edit-container {
+          .pt-editable-text {
+            width: 70%;
+            color: #182026;
+            font-family: system-ui;
+            font-size: 14px;
+
+            .pt-editable-content, .pt-editable-input {
+              // TODO investigate EditableText CSS - without the below rule, the -content span (in view mode)
+              // exceeds the max set vertical size of the TextArea; might be a bug
+              max-height: 120px;
+            }
+          }
+        }
+      }
+    }
+
+    button[id*='cohort-callsets-'][id$='-button'] {
+      margin: 1em 0 1em 0;
+    }
+
+    .horizontal-divider {
+      border-top: 1px solid #DBDCDD;
+      margin: 10px 0;
+    }
+
+  }
+
+  .pt-non-ideal-state {
+    padding-top: 200px;
+
+    h4 {
+      margin-top: 0;
+      border: 0;
+      color: black;
+      font-weight: 600;
+      line-height: 0.9em;
+      font-size: 20px;
+    }
+  }
+
+  .clear {
+    clear: both;
+  }
+}
+
+.pt-dialog.pt-overlay-content {
+  width: 900px;
+
+  .is-searchable {
+    width: 50%;
+  }
+
+  .cohort-structural-metadata {
+    > {
+      position: absolute;
+      right: 30px;
+      top: 22px;
+      background-color: #fff;
+    }
+  }
+
+  #single-patient-callsets-table-items {
+    margin: 20px 0 15px 0;
+
+    .ref-genome {
+      position: absolute;
+      left: 26%;
+    }
+    .platform {
+      position: absolute;
+      left: 38%;
+    }
+    .upload-date {
+      position: absolute;
+      left: 50%;
+    }
+    .resolution-message {
+      position: absolute;
+      left: 73%;
+    }
+  }
+}
+
+div[id*="-callsets-table-items"] {
+  color: #182026;
+  font-family: system-ui;
+  font-size: 14px;
+  padding: 10px 8px 1px 10px;
+  background-color: #EEF0F2;
+  border-radius: 3px;
+}
+
